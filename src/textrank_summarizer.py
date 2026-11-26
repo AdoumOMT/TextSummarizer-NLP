@@ -58,7 +58,6 @@ def summarizer_text_rank(text, sentence_count=5, language="french", output_dir="
     def get_colors(total, selected):
         return [COL_SELECTED if i in selected else COL_OTHER for i in range(total)]
 
-    #  FIGURE 1 — Matrice de similarité
     if n <= MAX_MATRIX_SENTENCES:
         vectorizer = TfidfVectorizer()
         tfidf_matrix = vectorizer.fit_transform(sentences).toarray()
@@ -98,7 +97,6 @@ def summarizer_text_rank(text, sentence_count=5, language="french", output_dir="
         paths.append(fig1_path)
         plt.close()
 
-    #  FIGURE 2 — Graphe TextRank
     if n <= MAX_MATRIX_SENTENCES:
         G = nx.Graph()
         for i in range(n):
@@ -143,7 +141,6 @@ def summarizer_text_rank(text, sentence_count=5, language="french", output_dir="
         paths.append(fig2_path)
         plt.close()
 
-    #  FIGURE 3 — Scores PageRank (Bar chart)
     fig3, ax3 = plt.subplots(figsize=(max(12, n * 0.6), 6))
     bar_colors = get_colors(n, selected_idx)
 
@@ -177,7 +174,6 @@ def summarizer_text_rank(text, sentence_count=5, language="french", output_dir="
     paths.append(fig3_path)
     plt.close()
 
-    #  FIGURE 4 — Comparaison horizontale
     fig4, ax4 = plt.subplots(figsize=(14, max(6, n * 0.5)))
     bar_colors_h = get_colors(n, selected_idx)
 

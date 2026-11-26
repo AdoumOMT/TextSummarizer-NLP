@@ -226,7 +226,6 @@ if "user_summary" in st.session_state:
             ["Scores de précision (ROUGE)", "Graphes d'analyse des phrases"]
         )
 
-        # --- ONGLET 1 : Tableau et courbe des scores ---
         with tab_scores:
             if res["rouge"]:
                 df_rouge = pd.DataFrame(res["rouge"])
@@ -252,7 +251,6 @@ if "user_summary" in st.session_state:
                     "pour afficher le tableau et la courbe des scores ROUGE."
                 )
 
-        # --- ONGLET 2 : Les 4 graphes d'analyse ---
         with tab_graphs:
             if res["figures"]:
                 g1, g2 = st.columns(2)
@@ -264,7 +262,6 @@ if "user_summary" in st.session_state:
             else:
                 st.info("Aucun graphique généré pour ce texte.")
 
-        # --- ENCADRÉ DU BAS : Explication en langage clair ---
         st.markdown("#### Interprétation des résultats")
         w_orig = res["orig_words"]
         w_tr = len(res["s2"].split())

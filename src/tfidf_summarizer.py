@@ -158,7 +158,6 @@ def generate_tfidf_summary(text, n_sentences=5, language="french"):
 
     selected = ranked_sentences[:n_sentences]
 
-    # Très important : remettre les phrases sélectionnées dans l'ordre original.
     selected = sorted(selected, key=lambda item: item["index"])
 
     selected_sentences = [item["sentence"] for item in selected]

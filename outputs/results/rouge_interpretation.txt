@@ -1,0 +1,4 @@
+La meilleure méthode est Proposition 2 (TextRank) (score F1 moyen = 0.3413).
+- ROUGE-1 mesure le chevauchement des mots individuels (unigrammes).
+- ROUGE-2 mesure le chevauchement des paires de mots consécutifs (bigrammes).
+- ROUGE-L mesure la plus longue séquence commune de mots (structure de phrase).
